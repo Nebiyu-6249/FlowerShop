@@ -1,0 +1,55 @@
+/* Fonts load at runtime in the visitor's browser (keeps builds offline-friendly). */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400..700&family=Tajawal:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-porcelain font-body text-ink antialiased;
+  }
+  body.font-arabic {
+    font-family: Tajawal, system-ui, sans-serif;
+  }
+  body.font-arabic .font-display {
+    font-family: Tajawal, system-ui, sans-serif;
+  }
+  ::selection {
+    @apply bg-blush-deep text-wine-deep;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Print-friendly order slip: hide the app chrome, show only the slip. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-slip, .print-slip * {
+    visibility: visible;
+  }
+  .print-slip {
+    position: absolute;
+    inset: 0;
+    padding: 24px;
+  }
+}

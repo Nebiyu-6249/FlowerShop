@@ -1,0 +1,13 @@
+# Netlify configuration for the Next.js App Router build.
+# Netlify's Next.js runtime handles the server-rendered routes
+# (/product/[slug], /order-confirmation/[id], /admin/orders/[id]) automatically.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

@@ -46,7 +46,7 @@ export default function AboutPage() {
         </div>
         <div className="relative aspect-[4/5] overflow-hidden rounded-arch bg-sand shadow-soft">
           <Image
-            src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=900&q=75"
+            src="/images/flowers/rose.jpg"
             alt="Florist arranging a bouquet in the studio"
             fill
             className="object-cover"

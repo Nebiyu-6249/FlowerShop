@@ -8,28 +8,29 @@ import { addDaysISO } from "@/lib/utils";
  * after which the browser-persisted mock DB (lib/data/db.ts) takes over.
  */
 
-// A small pool of royalty-free Unsplash photos. If any link is ever unavailable the UI
-// falls back to a styled placeholder (components/site/product-image.tsx), so the demo never breaks.
-const U = (id: string, w = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`;
+// Royalty-free Unsplash photos, downloaded and self-hosted in /public/images/flowers so the
+// storefront never depends on a third-party CDN. If a file is ever missing the UI still
+// falls back to a styled placeholder (components/site/product-image.tsx).
+const F = (name: string) => `/images/flowers/${name}.jpg`;
 export const IMG = [
-  U("photo-1490750967868-88aa4486c946"), // 0 pink blooms
-  U("photo-1487530811176-3780de880c2d"), // 1 rose
-  U("photo-1526047932273-341f2a7631f9"), // 2 roses bunch
-  U("photo-1494336956603-39a6dd9ac33d"), // 3 bouquet in hand
-  U("photo-1508610048659-a06b669e3321"), // 4 peonies
-  U("photo-1563241527-3004b7be0ffd"),    // 5 wrapped bouquet
-  U("photo-1457089328109-e5d9bd499191"), // 6 tulips
-  U("photo-1520763185298-1b434c919102"), // 7 pastel arrangement
-  U("photo-1469259943454-aa100abba749"), // 8 orchid
-  U("photo-1494972308805-463bc619d34e"), // 9 peony close
-  U("photo-1518895949257-7621c3c786d7"), // 10 sunflowers
-  U("photo-1471696035578-3d8c78d99684"), // 11 lilies
-  U("photo-1462530260150-162092dbf011"), // 12 wildflowers
-  U("photo-1533616688419-b7a585564566"), // 13 kraft-wrapped bouquet
-  U("photo-1561181286-d3fee7d55364"),    // 14 white roses
-  U("photo-1416879595882-3373a0480b5b"), // 15 potted plant
-  U("photo-1485955900006-10f4d324d411"), // 16 plant in pot
-  U("photo-1454262041357-5d96f50a2f27"), // 17 soft blooms
+  F("pink-blooms"),         // 0
+  F("rose"),                // 1
+  F("roses-bunch"),         // 2
+  F("mixed-bouquet"),       // 3
+  F("peonies"),             // 4
+  F("wrapped-bouquet"),     // 5
+  F("tulips"),              // 6
+  F("pastel-arrangement"),  // 7
+  F("orchid"),              // 8
+  F("peony-close"),         // 9
+  F("sunflowers"),          // 10
+  F("lilies"),              // 11
+  F("wildflowers"),         // 12
+  F("kraft-bouquet"),       // 13
+  F("vase-tulips"),         // 14
+  F("potted-plant"),        // 15
+  F("plant-pot"),           // 16
+  F("soft-blooms"),         // 17
 ];
 
 export const seedCategories: Category[] = [

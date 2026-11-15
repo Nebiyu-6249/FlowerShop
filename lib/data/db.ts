@@ -132,7 +132,7 @@ export const useDB = create<DBState>()(
       resetDemo: () => set(() => seedState()),
     }),
     {
-      name: "fleuraya-db-v1",
+      name: "fleuraya-db-v2",
       storage: createJSONStorage(() => localStorage),
       skipHydration: true,
     },
